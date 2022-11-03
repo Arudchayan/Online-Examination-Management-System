@@ -149,4 +149,44 @@
     <servlet-name>calcanswer</servlet-name>
     <url-pattern>/calcanswer</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetStudentController</display-name>
+    <servlet-name>GetStudentController</servlet-name>
+    <servlet-class>com.student.controller.GetStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetStudentController</servlet-name>
+    <url-pattern>/GetStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditStudentController</display-name>
+    <servlet-name>EditStudentController</servlet-name>
+    <servlet-class>com.student.controller.EditStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditStudentController</servlet-name>
+    <url-pattern>/EditStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>stdFeedbackController</display-name>
+    <servlet-name>stdFeedbackController</servlet-name>
+    <servlet-class>com.student.controller.stdFeedbackController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stdFeedbackController</servlet-name>
+    <url-pattern>/stdFeedback</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteFBController</display-name>
+    <servlet-name>deleteFBController</servlet-name>
+    <servlet-class>com.student.controller.deleteFBController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteFBController</servlet-name>
+    <url-pattern>/deleteFB</url-pattern>
+  </servlet-mapping>
 </web-app>
