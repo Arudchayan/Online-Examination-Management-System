@@ -123,7 +123,7 @@
     <description></description>
     <display-name>DAO</display-name>
     <servlet-name>DAO</servlet-name>
-    <servlet-class>com.exam.model.DAO</servlet-class>
+    <servlet-class>com.user.model.DAO</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DAO</servlet-name>
@@ -131,9 +131,19 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>getquestions</display-name>
+    <servlet-name>getquestions</servlet-name>
+    <servlet-class>com.user.servlet.getquestions</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getquestions</servlet-name>
+    <url-pattern>/getquestions</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>calcanswer</display-name>
     <servlet-name>calcanswer</servlet-name>
-    <servlet-class>com.exam.servlet.calcanswer</servlet-class>
+    <servlet-class>com.user.servlet.calcanswer</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>calcanswer</servlet-name>
@@ -141,13 +151,43 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>getquestions</display-name>
-    <servlet-name>getquestions</servlet-name>
-    <servlet-class>com.exam.servlet.getquestions</servlet-class>
+    <display-name>GetStudentController</display-name>
+    <servlet-name>GetStudentController</servlet-name>
+    <servlet-class>com.student.controller.GetStudentController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>getquestions</servlet-name>
-    <url-pattern>/getquestions</url-pattern>
+    <servlet-name>GetStudentController</servlet-name>
+    <url-pattern>/GetStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditStudentController</display-name>
+    <servlet-name>EditStudentController</servlet-name>
+    <servlet-class>com.student.controller.EditStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditStudentController</servlet-name>
+    <url-pattern>/EditStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>stdFeedbackController</display-name>
+    <servlet-name>stdFeedbackController</servlet-name>
+    <servlet-class>com.student.controller.stdFeedbackController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stdFeedbackController</servlet-name>
+    <url-pattern>/stdFeedback</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteFBController</display-name>
+    <servlet-name>deleteFBController</servlet-name>
+    <servlet-class>com.student.controller.deleteFBController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteFBController</servlet-name>
+    <url-pattern>/deleteFB</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
