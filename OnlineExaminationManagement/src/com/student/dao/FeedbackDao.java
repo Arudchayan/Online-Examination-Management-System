@@ -15,7 +15,7 @@ public class FeedbackDao {
         Feedback fd=new Feedback();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/examsystem","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","");
             PreparedStatement ps1=con.prepareStatement("insert into Feedback(SID,ExamID,Subject,Content) values(?,?,?,?)");
             ps1.setString(1,sid);
             ps1.setString(2,examID);

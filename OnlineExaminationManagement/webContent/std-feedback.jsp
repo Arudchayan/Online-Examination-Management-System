@@ -28,9 +28,9 @@ String sname=s1.getSname();
 String email=s1.getEmail(); 
 %>  
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A55086;">
+<nav class="navbar navbar-expand-lg bg-light">
 <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="Logo" width="160"></a>
+    <a class="navbar-brand" href="#"><img src="Images/Logo.png" alt="Logo" width="160"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,11 +49,14 @@ String email=s1.getEmail();
             <a class="nav-link" href="std-results.jsp">Results</a>
         </li>
     </ul>
-    </div>    
+    </div>
+        <form action="Logout" method="post">
+            <input type="submit" class="btn btn-primary" value="Logout">
+    	</form>        
 </div>
 </nav>
 <br>
-<div align="right" class="container-fluid"><button class="btn btn-outline-primary"><a href="feedback-form.jsp" style="text-decoration:none;">Send Feedback</a></button></div>
+<div align="right" class="container-fluid"><a href="feedback-form.jsp" style="text-decoration:none;"><button class="btn btn-primary">Send Feedback</button></a></div>
 <h2 align="center">Feedback</h2>
 
 <%        
@@ -62,7 +65,7 @@ List<Feedback> fd = new ArrayList<>();
 fd=dao.getFeedback(sid); 
 for(Feedback item:fd){
 %>
-<table class="table card-body table-borderless" style="width:50%;  margin-left: auto; margin-right: auto; background:white; border-style:groove" >
+<table class="table card-body table-borderless" style="width:60%;  margin-left: auto; margin-right: auto; background:white; border-style:groove" >
 <tr class="table-info">
 <th>MessageID</th>
 <th>Date</th>

@@ -28,9 +28,9 @@ String sname=s1.getSname();
 String email=s1.getEmail(); 
 %>  
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A55086;">
+<nav class="navbar navbar-expand-lg bg-light">
 <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="Logo" width="160"></a>
+    <a class="navbar-brand" href="#"><img src="Images/Logo.png" alt="Logo" width="160"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,7 +49,10 @@ String email=s1.getEmail();
             <a class="nav-link" href="std-results.jsp">Results</a>
         </li>
     </ul>
-    </div>    
+    </div>
+        <form action="Logout" method="post">
+            <input type="submit" class="btn btn-primary" value="Logout">
+    	</form>        
 </div>
 </nav>
 
@@ -64,10 +67,11 @@ for(Module item:md){
 <tr class="table-warning">
 <th>Module Code</th>
 <th>Module Name</th>
+<th></th>
 </tr>
 <tr>
-<td><%out.println(item.getMcode());%></td>
-<td><%out.println(item.getMname());%></td>
+<td style="text-align:left"><%out.println(item.getMcode());%></td>
+<td style="text-align:left"><%out.println(item.getMname());%></td>
 </tr>
 </table> 
 <% 

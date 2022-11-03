@@ -27,9 +27,9 @@ String nic=s1.getNIC();
 String cid=s1.getCID();
 String email=s1.getEmail();  
 %>     
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A55086;">
+<nav class="navbar navbar-expand-lg bg-light">
 <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="Logo" width="160"></a>
+    <a class="navbar-brand" href="#"><img src="Images/Logo.png" alt="Logo" width="160"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,25 +49,33 @@ String email=s1.getEmail();
         </li>
     </ul>
     </div>
+        <form action="Logout" method="post">
+            <input type="submit" class="btn btn-primary" value="Logout">
+    	</form>
 </div>
 </nav>
 <br>
-<div class="container-fluid" align="right"><button class="btn btn-outline-primary"><a href="std-feedback.jsp" style="text-decoration:none;">Feedback</a></button></div>
- 
+
 <h2 align="center">Welcome <%out.println(sname);%></h2>
+<div class="container-fluid" align="right"><a href="std-feedback.jsp" style="text-decoration:none;"><button class="btn btn-primary">Feedback</button></a></div>
+ 
 <br>
-<table class="table card-body table-borderless" style="width:80%;  margin-left: auto; margin-right: auto; background:white; border-style:hidden;" >
+<div class="container-fluid" align="center">
+<div class="card"  style="width:80%">
+<h4 class="card-header">Student Profile</h4>
+ <div class="card-body">
+<table class="table table-borderless" style="width:80%;  margin-left: auto; margin-right: auto;border:hidden;">
     <tr>
     <td colspan="2" style="text-align:right;">
-    <button class="btn btn-outline-primary"><a href="edit-student.jsp" style="text-decoration:none;">Edit</a></button>
+    <a href="edit-student.jsp" style="text-decoration:none;"><button class="btn btn-primary">Edit</button></a>
     </td>
     </tr>
     <tr>
-        <th>SID</th>
+        <th>Student ID</th>
         <td><%out.println(sid);%></td>
     </tr>
     <tr>
-        <th>Sname</th>
+        <th>Student Name</th>
         <td><%out.println(sname);%></td>
     </tr>
     <tr>
@@ -75,7 +83,7 @@ String email=s1.getEmail();
         <td><%out.println(address);%></td>
     </tr>
     <tr>
-        <th>DOB</th>
+        <th>Date Of Birth</th>
         <td><%out.println(dob);%></td>
     </tr>
     <tr>
@@ -91,8 +99,9 @@ String email=s1.getEmail();
         <td><%out.println(email);%></td>
     </tr>
 </table>
-
-
+</div>
+</div>
+</div>
 
 
 <script type="text/javascript" src="${contextPath}/js/bootstrap.bundle.js" >

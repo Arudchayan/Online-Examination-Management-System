@@ -24,9 +24,9 @@ String email=s1.getEmail();
 ses.setAttribute("sid",sid);
 %>  
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A55086;">
+<nav class="navbar navbar-expand-lg bg-light">
 <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="Logo" width="160"></a>
+    <a class="navbar-brand" href="#"><img src="Images/Logo.png" alt="Logo" width="160"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,12 +46,17 @@ ses.setAttribute("sid",sid);
         </li>
     </ul>
     </div>
+    	<form action="Logout" method="post">
+            <input type="submit" class="btn btn-primary" value="Logout">
+    	</form>
     
 </div>
 </nav>
-<h2 align="center">Feedback</h2>
+<div class="container-fluid" align="center">
+<div class="card" style="width:80%">
+<h2 align="center" class="card-header">Feedback</h2>
 <form method="post" action="stdFeedback">
-<div>
+<div class="card-body">
 <table class="table card-body table-borderless" style="width:50%;  margin-left: auto; margin-right: auto; background:white;">
     <tr>
         <th>SID</th>
@@ -73,22 +78,22 @@ ses.setAttribute("sid",sid);
         <th>Subject</th>
         <td>
         <div class="form-check form-check-inline">
-        <label class="form-check-label"> Comments </label>
+        <label class="form-check-label"> Comments &nbsp </label>
         <input type="radio" name="subject" class="form-check-input" value="comments">        
         </div>
         
         <div class="form-check form-check-inline">
-        <label class="form-check-label"> Suggestions </label>
+        <label class="form-check-label"> Suggestions &nbsp </label>
 		<input type="radio" name="subject" class="form-check-input" value="suggestions">		
 		</div>
 		
 		<div class="form-check form-check-inline">
-		<label class="form-check-label"> Issues </label>
+		<label class="form-check-label"> Issues &nbsp </label>
 		<input type="radio" name="subject" class="form-check-input" value="issues">		
 		</div>
 		
 		<div class="form-check form-check-inline">
-		<label class="form-check-label"> Questions </label>
+		<label class="form-check-label"> Questions &nbsp </label>
 		<input type="radio" name="subject" class="form-check-input" value="questions">		
 		</div>
 		
@@ -107,10 +112,9 @@ ses.setAttribute("sid",sid);
     </tr>
 </table>
 </div>
-
 </form>
-
-
+</div>
+</div>
 <script type="text/javascript" src="${contextPath}/js/bootstrap.bundle.js" >
 </body>
 </html>
