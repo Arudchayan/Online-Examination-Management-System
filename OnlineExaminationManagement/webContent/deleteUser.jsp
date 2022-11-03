@@ -79,7 +79,7 @@
 	</form>-->
 	
 	<!-- Bootstrap js -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!--  Validation js -->
     <script rel="javascript" src="js/userNameValidation.js"></script>
 </body>

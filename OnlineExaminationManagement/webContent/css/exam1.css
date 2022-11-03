@@ -1,0 +1,26 @@
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert{
+    width: 1200px;
+    font-size: 20px;
+}
+
+input{
+    width: 20px;
+    height: 20px;
+}
+
+.form-check-label{
+    margin-left: 10px;
+}
+
+.btn{
+    font-size: 20px;
+}

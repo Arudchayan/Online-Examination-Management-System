@@ -1,12 +1,14 @@
-package com.user.model;
+package com.exam.model;
+
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DAO {
-	String url="jdbc:mysql://localhost:3306/examsystem";
+	String url="jdbc:mysql://localhost:3306/onlineexaminationmanagement";
 	String username ="root";
 	String password="password";
 	public ResultSet execute(String sql) {
@@ -27,3 +29,4 @@ public class DAO {
 		
 	}
 }
+

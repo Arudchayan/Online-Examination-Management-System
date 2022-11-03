@@ -123,7 +123,7 @@
     <description></description>
     <display-name>DAO</display-name>
     <servlet-name>DAO</servlet-name>
-    <servlet-class>com.user.model.DAO</servlet-class>
+    <servlet-class>com.exam.model.DAO</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DAO</servlet-name>
@@ -131,22 +131,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>getquestions</display-name>
-    <servlet-name>getquestions</servlet-name>
-    <servlet-class>com.user.servlet.getquestions</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>getquestions</servlet-name>
-    <url-pattern>/getquestions</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>calcanswer</display-name>
     <servlet-name>calcanswer</servlet-name>
-    <servlet-class>com.user.servlet.calcanswer</servlet-class>
+    <servlet-class>com.exam.servlet.calcanswer</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>calcanswer</servlet-name>
     <url-pattern>/calcanswer</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>getquestions</display-name>
+    <servlet-name>getquestions</servlet-name>
+    <servlet-class>com.exam.servlet.getquestions</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getquestions</servlet-name>
+    <url-pattern>/getquestions</url-pattern>
   </servlet-mapping>
 </web-app>
