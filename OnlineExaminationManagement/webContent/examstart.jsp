@@ -3,10 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link href="examstart.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap css -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -46,7 +44,8 @@ And many more examples.</pre></div>
 </div>
 </div>
 
-    
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
 
 
 </body>

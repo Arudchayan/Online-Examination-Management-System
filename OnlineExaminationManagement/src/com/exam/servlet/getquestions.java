@@ -1,8 +1,8 @@
-package com.user.servlet;
-
+package com.exam.servlet;
 
 
 import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,7 +29,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.user.model.DAO;
+import com.exam.model.DAO;
 @WebServlet("/GetQuestions")
 /**
  * Servlet implementation class getquestions
@@ -46,7 +46,7 @@ public class getquestions extends HttpServlet{
 		try {
 			rs.next();
 			String filename=rs.getString("ExamFile");
-			String FileLocation="C:\\Users\\PC\\eclipse-workspace\\OnlineExaminationManagement\\webContent\\examfiles\\"+filename;
+			String FileLocation="C:\\Users\\PC\\eclipse-workspace\\New folder\\OnlineExaminationManagement\\webContent\\examfiles\\"+filename;
 		
 		//GETTING QUESTIONS AND ANSWERS FROM EXCEL SHEET
 		FileInputStream file = new FileInputStream(new File(FileLocation));
@@ -151,4 +151,5 @@ public class getquestions extends HttpServlet{
 	}
 
 }
+
 
