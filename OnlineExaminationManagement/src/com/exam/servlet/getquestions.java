@@ -17,8 +17,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -42,7 +46,22 @@ public class getquestions extends HttpServlet{
 		
 		//DATABASE FILE LOCATION ACCESS
 		DAO Obj = new DAO();
-		ResultSet rs =Obj.execute("select * from exam where ExamId='EX0001'");
+		ResultSet rs = Obj.execute("select ExamTime,Duration from exam where examid = 'EX0001'");
+		try {
+			rs.next();
+			Time starttime =rs.getTime("ExamTime");
+			LocalTime endtime =starttime.toLocalTime();
+			endtime=endtime.plusSeconds(rs.getInt("Duration"));
+			LocalTime currenttime = LocalTime.now();
+			int seconds=(int) currenttime.until(endtime,ChronoUnit.SECONDS);
+			request.getSession().setAttribute("seconds",seconds);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		rs =Obj.execute("select * from exam where ExamId='EX0001'");
 		try {
 			rs.next();
 			String filename=rs.getString("ExamFile");
@@ -127,6 +146,7 @@ public class getquestions extends HttpServlet{
 			
 		 }
 		RequestDispatcher rd;
+		request.setAttribute("numq", questions.size());
 		if(qnum==questions.size()) {
 			//AFTER LAST QUESTION
 		rd = request.getRequestDispatcher("calcanswer");

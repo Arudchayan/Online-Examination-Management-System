@@ -149,4 +149,14 @@
     <servlet-name>getquestions</servlet-name>
     <url-pattern>/getquestions</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CountdownTimer</display-name>
+    <servlet-name>CountdownTimer</servlet-name>
+    <servlet-class>com.exam.servlet.CountdownTimer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CountdownTimer</servlet-name>
+    <url-pattern>/CountdownTimer</url-pattern>
+  </servlet-mapping>
 </web-app>

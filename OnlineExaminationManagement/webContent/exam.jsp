@@ -6,6 +6,24 @@
 <link rel="stylesheet" href="css/exam1.css">
 
 <title>exam page</title>
+<script>
+var countDownDate = new Date(<%=(int)session.getAttribute("seconds")%>*1000);
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  countDownDate=countDownDate-1000;
+  var time=new Date(countDownDate).toISOString().slice(11,19)
+  document.getElementById("timer").innerHTML = time;
+  
+  // If the count down is finished, write some text
+  if (time <= 0) {
+    clearInterval(x);
+  }
+}, 1000);
+</script>
+<p1 id='timer'></p1>
 <label hidden id="array"></label></div><br>
 </head>
 <body onload="iterate(); ">
