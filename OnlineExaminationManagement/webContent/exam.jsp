@@ -23,7 +23,7 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-<p1 id='timer'></p1>
+<p1 id='timer' class="text-danger"></p1>
 <label hidden id="array"></label></div><br>
 </head>
 <body onload="iterate(); ">

@@ -39,7 +39,7 @@ ses.setAttribute("sid",sid);
             <a class="nav-link" href="std-modules.jsp">Modules</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Exam</a>
+            <a class="nav-link" href="exam-view.jsp">Exam</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="std-results">Results</a>

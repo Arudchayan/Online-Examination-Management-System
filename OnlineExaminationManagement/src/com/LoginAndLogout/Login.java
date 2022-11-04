@@ -60,8 +60,8 @@ public class Login extends HttpServlet {
 			passwdDB = usi1.passwordDecryption(passwdDB);
 
 		/**
-		 * Setting sessions for: 
-		 * user name, first name, last name, age, email, phone number, user type
+		 * Setting sessions for: user name, first name, last name, age, email, phone
+		 * number, user type
 		 */
 		HttpSession session = request.getSession();
 		session.setAttribute("userNameLogin", userName);
@@ -74,16 +74,18 @@ public class Login extends HttpServlet {
 
 		/**
 		 * If user entered user name and password match with database user name and
-		 * password it will redirect to user tyep's home page else it will show a error message
+		 * password it will redirect to user tyep's home page else it will show a error
+		 * message
 		 */
 		if ((firstName != "") && (passwd.equals(passwdDB))) {
 			if (userType.equals("Admin")) {
 				RequestDispatcher dispatcher1 = request.getRequestDispatcher("adminHome.jsp");
 				dispatcher1.forward(request, response);
+			} else if (userType.equals("Student")) {
+				RequestDispatcher dispatcher1 = request.getRequestDispatcher("GetStudentController");
+				dispatcher1.forward(request, response);
 			}
 			/*
-			 * else if(userType.equals("Student")) { RequestDispatcher dispatcher1 =
-			 * request.getRequestDispatcher(""); dispatcher1.forward(request, response); }
 			 * else if(userType.equals("Profecor")) { RequestDispatcher dispatcher1 =
 			 * request.getRequestDispatcher(""); dispatcher1.forward(request, response); }
 			 */

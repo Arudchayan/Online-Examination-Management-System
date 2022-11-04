@@ -19,7 +19,7 @@ public class GetStudentController extends HttpServlet {
 		HttpSession ses = request.getSession();
 		//int uid=(int) ses.getAttribute("userNameLogin");
         StudentDao dao=new StudentDao();
-        Student s1=dao.getStudent(100001);      
+        Student s1=dao.getStudent(request.getSession().getAttribute("userNameLogin"));      
         ses.setAttribute("student", s1);
         response.sendRedirect("student-index.jsp");
 	}

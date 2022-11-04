@@ -1,32 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
  pageEncoding="ISO-8859-1"%>
 <%@page import="com.student.model.Student" %>
+<%@page import="com.student.model.Exam" %>
+<%@page import="com.student.dao.ExamDao" %>
+
 <%@page import="jakarta.servlet.http.*" %>
 <%@page import="jakarta.servlet.*" %>
+<%@page import="java.util.List" %>
+<%@page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Student Dashboard</title>
+<title>Student Exams</title>
 <link rel="stylesheet" href="${contextPath}/css/bootstrap.css">	
 <link rel="stylesheet" href="${contextPath}/styles.css">	
 </head>
 <body>
-<% 
+<%
 HttpSession ses = request.getSession();
 Student s1=new Student();
 s1=(Student)ses.getAttribute("student");
 int uid=s1.getUser_id();
 String sid=s1.getSID();
 String sname=s1.getSname();
-String address=s1.getAddress();
-String dob=s1.getDOB();
-String nic=s1.getNIC();
-String cid=s1.getCID();
-String email=s1.getEmail();  
-%>     
+String email=s1.getEmail(); 
+%>  
+
 <nav class="navbar navbar-expand-lg bg-light">
 <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="Images/Logo.png" alt="Logo" width="160"></a>
@@ -36,7 +37,7 @@ String email=s1.getEmail();
     <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link active" href="student-index.jsp">Home</a>
+            <a class="nav-link" href="student-index.jsp">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="std-modules.jsp">Modules</a>
@@ -51,59 +52,58 @@ String email=s1.getEmail();
     </div>
         <form action="Logout" method="post">
             <input type="submit" class="btn btn-primary" value="Logout">
-    	</form>
+    	</form>        
 </div>
 </nav>
 <br>
+<div align="right" class="container-fluid"><a href="feedback-form.jsp" style="text-decoration:none;"><button class="btn btn-primary">Send Feedback</button></a></div>
+<h2 align="center">Exam</h2>
 
-<h2 align="center">Welcome <%out.println(sname);%></h2>
-<div class="container-fluid" align="right"><a href="std-feedback.jsp" style="text-decoration:none;"><button class="btn btn-primary">Feedback</button></a></div>
- 
-<br>
-<div class="container-fluid" align="center">
-<div class="card"  style="width:80%">
-<h4 class="card-header">Student Profile</h4>
- <div class="card-body">
-<table class="table table-borderless" style="width:80%;  margin-left: auto; margin-right: auto;border:hidden;">
-    <tr>
-    <td colspan="2" style="text-align:right;">
-    <a href="edit-student.jsp" style="text-decoration:none;"><button class="btn btn-primary">Edit</button></a>
-    </td>
-    </tr>
-    <tr>
-        <th>Student ID</th>
-        <td><%out.println(sid);%></td>
-    </tr>
-    <tr>
-        <th>Student Name</th>
-        <td><%out.println(sname);%></td>
-    </tr>
-    <tr>
-        <th>Address</th>
-        <td><%out.println(address);%></td>
-    </tr>
-    <tr>
-        <th>Date Of Birth</th>
-        <td><%out.println(dob);%></td>
-    </tr>
-    <tr>
-        <th>NIC</th>
-        <td><%out.println(nic);%></td>
-    </tr>
-    <tr>
-        <th>Enrolled Course</th>
-        <td><%out.println(cid);%></td>
-    </tr>
-    <tr>
-        <th>E-mail</th>
-        <td><%out.println(email);%></td>
-    </tr>
-</table>
-</div>
-</div>
-</div>
+<%        
+ExamDao dao=new ExamDao();
+List<Exam> ex = new ArrayList<>();
+ex=dao.getExam(sid); 
+for(Exam item:ex){
+%>
+<table class="table card-body table-borderless" style="width:60%;  margin-left: auto; margin-right: auto; background:white; border-style:groove" >
+<tr class="table-info">
+<th>Exam ID</th>
+<th>Exam Name</th>
+<th>Module Code</th>
+<th>Exam Date</th>
+<th>Exam Time</th>
+<th>Duration</th>
+<th></th>
+</tr>
+<tr>
+<td>
+<% 
+ses.setAttribute("examId", item.getExamID());
+out.println(item.getExamID());
+%> 
+</td>
+<td><% out.println(item.getExamName()); %> </td>
+<td><% out.println(item.getMcode()); %></td>
+<td><% out.println(item.getExamDate()); %></td>
+<td><% out.println(item.getExamTime()); %></td>
+<td><% out.println(item.getDuration()); %></td>
+<td>
+<form action=>
+<input type="submit" value="Enter Exam" class="btn btn-primary">
+</form></td>
+</tr>
+</table> 
+<% 
+}
+%>
+
+
+
+
 
 
 <script type="text/javascript" src="${contextPath}/js/bootstrap.bundle.js" >
 </body>
 </html>
+
+

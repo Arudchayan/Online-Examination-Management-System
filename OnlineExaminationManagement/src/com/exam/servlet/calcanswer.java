@@ -45,7 +45,7 @@ public class calcanswer extends HttpServlet {
 			//String ExamID=(String) request.getSession().getAttribute("ExamID");
 			//String FileLocation=user+ExamID+".xls";
 			//fileOut = new FileOutputStream("C:\\Users\\PC\\eclipse-workspace\\Exam\\examfiles\\"+FileLocation);
-			fileOut = new FileOutputStream("C:\\Users\\PC\\eclipse-workspace\\New folder\\OnlineExaminationManagement\\webContent\\examfiles\\"+answer+".xls");
+			fileOut = new FileOutputStream("C:\\Users\\PC\\eclipse-workspace\\workspace 2\\OnlineExaminationManagement\\webContent\\"+answer+".xls");
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

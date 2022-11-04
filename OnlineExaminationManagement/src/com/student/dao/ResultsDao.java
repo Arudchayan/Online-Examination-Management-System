@@ -13,7 +13,7 @@ public class ResultsDao {
     public List<Results> getResults(String sid) {
         try {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","");               
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");               
         PreparedStatement st = con.prepareStatement("select r.Mcode,m.Mname ,r.Grade from results r, module m where r.Mcode=m.Mcode AND SID=?");
         st.setString(1,sid);
         ResultSet rs = st.executeQuery();

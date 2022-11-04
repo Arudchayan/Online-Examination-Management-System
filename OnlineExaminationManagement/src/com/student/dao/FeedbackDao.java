@@ -14,8 +14,8 @@ public class FeedbackDao {
     public Feedback insertFeedback(String sid,String examID,String subject,String content) {
         Feedback fd=new Feedback();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");
             PreparedStatement ps1=con.prepareStatement("insert into Feedback(SID,ExamID,Subject,Content) values(?,?,?,?)");
             ps1.setString(1,sid);
             ps1.setString(2,examID);
@@ -33,7 +33,7 @@ public class FeedbackDao {
     public List<Feedback> getFeedback(String sid) {
             try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/examsystem","root","");               
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/examsystem","root","12345");               
             PreparedStatement st = con.prepareStatement("select * from Feedback where SID=?");
             st.setString(1,sid);
             ResultSet rs = st.executeQuery();
@@ -62,7 +62,7 @@ public class FeedbackDao {
         Feedback fd=new Feedback();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/examsystem","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/examsystem","root","12345");
             PreparedStatement ps1=con.prepareStatement("delete from Feedback where MessageID=?");
             ps1.setInt(1,mid);
             ps1.executeUpdate();
