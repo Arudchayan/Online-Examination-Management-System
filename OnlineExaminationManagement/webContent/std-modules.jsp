@@ -65,13 +65,13 @@ for(Module item:md){
 %>
 <table class="table table-borderless" style="width:50%;  margin-left: auto; margin-right: auto; background:white; border-style:groove;" >
 <tr class="table-warning">
-<th style="text-align:center">Module Code</th>
-<th style="text-align:center">Module Name</th>
+<th>Module Code</th>
+<th>Module Name</th>
 <th></th>
 </tr>
 <tr>
-<td style="text-align:center"><%out.println(item.getMcode());%></td>
-<td style="text-align:center"><%out.println(item.getMname());%></td>
+<td style="text-align:left"><%out.println(item.getMcode());%></td>
+<td style="text-align:left"><%out.println(item.getMname());%></td>
 </tr>
 </table> 
 <% 

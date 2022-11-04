@@ -5,11 +5,19 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.exam.model.DAO;
+import com.mysql.jdbc.PreparedStatement;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -34,18 +42,17 @@ public class calcanswer extends HttpServlet {
 		 XSSFWorkbook wb1 = new XSSFWorkbook();
 		 XSSFSheet sheet1 = wb1.createSheet("Sheet 1");
 		 Row row1;
-		 sheet1.createRow(0).createCell(0).setCellValue("Student ID");
+		 sheet1.createRow(0).createCell(0).setCellValue((String)request.getSession().getAttribute("userNameLogin"));
 		 for(int x = 0;x<answer.size();x++) {
 		 row1 =sheet1.createRow(x+1);
 		 row1.createCell(0).setCellValue(answer.get(x));
 	   }
 		 OutputStream fileOut = null;
 		try {
-			//String user=(String) request.getSession().getAttribute("user");
-			//String ExamID=(String) request.getSession().getAttribute("ExamID");
-			//String FileLocation=user+ExamID+".xls";
-			//fileOut = new FileOutputStream("C:\\Users\\PC\\eclipse-workspace\\Exam\\examfiles\\"+FileLocation);
-			fileOut = new FileOutputStream("C:\\Users\\PC\\eclipse-workspace\\workspace 2\\OnlineExaminationManagement\\webContent\\"+answer+".xls");
+			String userid=(String) request.getSession().getAttribute("userNameLogin");
+			String ExamID=(String) request.getSession().getAttribute("examId");
+			String FileLocation=userid+ExamID+".xls";
+			fileOut = new FileOutputStream("C:\\Users\\PC\\eclipse-workspace\\workspace 2\\OnlineExaminationManagement\\webContent\\examfiles\\"+FileLocation);
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -66,8 +73,24 @@ public class calcanswer extends HttpServlet {
 		}
 		marks=(marks/answers.size())*100;
 		request.setAttribute("marks", marks);
-		//DAO Obj = new DAO();
-		//ResultSet rs =Obj.execute("insert into Answer values("userid+examid","examid","userid","FileLocation","marks");");
+		DAO Obj = new DAO();
+		String userid=(String) request.getSession().getAttribute("userNameLogin");
+		String ExamID=(String) request.getSession().getAttribute("examId");
+		String FileLocation=userid+ExamID+".xls";
+		request.getSession().setAttribute("FileLocation",FileLocation);
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");                 
+	        String sql="insert into `onlineexaminationmanagement`.`Answer`(`AnswerID`, `ExamID`, `StudentID`, `AnswerFile`, `Marks`) VALUES("+"'"+userid+ExamID+"'"+","+"'"+ExamID+"'"+","+"'"+userid+"'"+","+"'"+FileLocation+"'"+","+"'"+marks+"'"+")";
+	        java.sql.PreparedStatement ps = con.prepareStatement(sql);
+	        ps.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    
+		
+		
 		
 		
 		System.out.println(answer);

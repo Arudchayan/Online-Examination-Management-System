@@ -66,14 +66,14 @@ for(Results item:result){
 %>
 <table class="table card-body table-borderless" style="width:50%;  margin-left: auto; margin-right: auto; background:white; border-style:groove" >
 <tr class="table-info">
-<th style="text-align:center">Module Code</th>
-<th style="text-align:center">Module Name</th>
-<th style="text-align:center">Grade</th>
+<th>Module Code</th>
+<th>Module Name</th>
+<th>Grade</th>
 </tr>
 <tr>
-<td style="text-align:center"><% out.println(item.getMcode()); %> </td>
-<td style="text-align:center"><% out.println(item.getMname()); %></td>
-<td style="text-align:center"><% out.println(item.getGrade()); %></td>
+<td><% out.println(item.getMcode()); %> </td>
+<td><% out.println(item.getMname()); %></td>
+<td><% out.println(item.getGrade()); %></td>
 </tr>
 </table> 
 <% 

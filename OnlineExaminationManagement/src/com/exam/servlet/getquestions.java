@@ -46,7 +46,9 @@ public class getquestions extends HttpServlet{
 		
 		//DATABASE FILE LOCATION ACCESS
 		DAO Obj = new DAO();
-		ResultSet rs = Obj.execute("select ExamTime,Duration from exam where examid = 'EX0001'");
+		String examid=(String) request.getSession().getAttribute("examId");
+		String sql="select ExamTime,Duration from exam where examid ="+"'"+examid+"'";
+		ResultSet rs = Obj.execute(sql);
 		try {
 			rs.next();
 			Time starttime =rs.getTime("ExamTime");
@@ -61,7 +63,7 @@ public class getquestions extends HttpServlet{
 			e.printStackTrace();
 		}
 		
-		rs =Obj.execute("select * from exam where ExamId='EX0001'");
+		rs =Obj.execute("select * from exam where ExamId="+"'"+examid+"'");
 		try {
 			rs.next();
 			String filename=rs.getString("ExamFile");
