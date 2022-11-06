@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -17,8 +18,10 @@ public class ExamDao {
         try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");                 
-        PreparedStatement st = con.prepareStatement("select e.ExamID,e.Mcode,e.ExamName,e.ExamDate,e.ExamTime,e.Duration from exam e, batch b, student s where s.SID=b.SID AND b.BatchID=e.BatchID AND s.SID=? AND e.ExamDate="+java.time.LocalDate.now());
+        LocalDate date=java.time.LocalDate.now();
+        PreparedStatement st = con.prepareStatement("select e.ExamID,e.Mcode,e.ExamName,e.ExamDate,e.ExamTime,e.Duration from exam e, batch b, student s where s.SID=b.SID AND b.BatchID=e.BatchID AND s.SID=? AND e.ExamDate=?");
         st.setString(1,sid);
+        st.setString(2, date.toString());
         ResultSet rs = st.executeQuery();
         List<Exam> ex = new ArrayList<>();
         while(rs.next()) {

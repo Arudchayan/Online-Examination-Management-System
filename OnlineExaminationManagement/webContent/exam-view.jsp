@@ -78,7 +78,7 @@ for(Exam item:ex){
 <tr>
 <td>
 <% 
-ses.setAttribute("examId", item.getExamID());
+session.setAttribute("examId", item.getExamID());
 out.println(item.getExamID());
 %> 
 </td>
@@ -88,7 +88,7 @@ out.println(item.getExamID());
 <td><% out.println(item.getExamTime()); %></td>
 <td><% out.println(item.getDuration()); %></td>
 <td>
-<form action=>
+<form action='examstart.jsp'>
 <input type="submit" value="Enter Exam" class="btn btn-primary">
 </form></td>
 </tr>
