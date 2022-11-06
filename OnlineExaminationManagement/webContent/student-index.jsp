@@ -61,11 +61,11 @@ String email=s1.getEmail();
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
+    <ul class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
+    </ul>
     <div class="carousel-inner" style="height:600px;">
         <div class="carousel-item active" style="height:550px;" data-bs-interval="10">
             <img class="d-block w-100" src="Images/exams.jpg" alt="First slide" style="object-fit: cover; height:550px;">
