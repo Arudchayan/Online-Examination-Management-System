@@ -63,15 +63,18 @@ List<Module> md = new ArrayList<>();
 md=dao.getModule(sid); 
 for(Module item:md){
 %>
-<table class="table table-borderless" style="width:50%;  margin-left: auto; margin-right: auto; background:white; border-style:groove;" >
-<tr class="table-warning">
+<table class="table table-borderless" style="width:55%;  margin-left: auto; margin-right: auto; background:white; border-style:groove;" >
+<tr class="table-info">
 <th>Module Code</th>
 <th>Module Name</th>
-<th></th>
+<th>Module Description</th>
+<th>Number Of Credits</th>
 </tr>
 <tr>
 <td style="text-align:left"><%out.println(item.getMcode());%></td>
 <td style="text-align:left"><%out.println(item.getMname());%></td>
+<td style="text-align:left"><%out.println(item.getDescription());%></td>
+<td style="text-align:left"><%out.println(item.getNoOfCredits());%></td>
 </tr>
 </table> 
 <% 

@@ -55,7 +55,7 @@ String email=s1.getEmail();
     	</form>        
 </div>
 </nav>
-
+<div align="right" class="container-fluid"><a href="feedback-form.jsp" style="text-decoration:none;"><button class="btn btn-primary">Send Feedback</button></a></div>
 <h2 align="center">Results</h2>
 
 <%        
@@ -65,15 +65,23 @@ result=dao.getResults(sid);
 for(Results item:result){
 %>
 <table class="table card-body table-borderless" style="width:50%;  margin-left: auto; margin-right: auto; background:white; border-style:groove" >
-<tr class="table-info">
-<th>Module Code</th>
-<th>Module Name</th>
-<th>Grade</th>
+<tr class="table-light">
+<th>Answer ID</th>
+<th>Exam ID</th>
+<th>Exam Name</th>
+<th>Exam Date</th>
+<th>Exam Time</th>
+<th>Duration</th>
+<th>Marks</th>
 </tr>
-<tr>
-<td><% out.println(item.getMcode()); %> </td>
-<td><% out.println(item.getMname()); %></td>
-<td><% out.println(item.getGrade()); %></td>
+<tr class="<%if(item.getMarks()>=45){out.println("table-success");}else{out.println("table-danger");}%>">
+<td><% out.println(item.getAnswerID()); %> </td>
+<td><% out.println(item.getExamID()); %></td>
+<td><% out.println(item.getExamName()); %></td>
+<td><% out.println(item.getExamDate()); %></td>
+<td><% out.println(item.getExamTime()); %></td>
+<td><% out.println(item.getDuration()); %></td>
+<td><% out.println(item.getMarks()); %></td>
 </tr>
 </table> 
 <% 
@@ -85,7 +93,7 @@ for(Results item:result){
 
 
 
-<script type="text/javascript" src="${contextPath}/js/bootstrap.bundle.js" >
+<script type="text/javascript" src="${contextPath}/js/bootstrap.bundle.js" ></script>
 </body>
 </html>
 

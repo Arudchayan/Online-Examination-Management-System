@@ -14,7 +14,7 @@ public class ModuleDao {
         try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");               
-        PreparedStatement st = con.prepareStatement("select m.Mcode,m.Mname from Student s, Module m, Offers o, Course c where s.CID=c.CID AND c.CID=o.CID AND m.Mcode=o.Mcode AND SID=?");
+        PreparedStatement st = con.prepareStatement("select m.Mcode,m.Mname,m.M_Description,m.NoOfCredits from Student s, Module m, Offers o, Course c where s.CID=c.CID AND c.CID=o.CID AND m.Mcode=o.Mcode AND SID=?");
         st.setString(1,sid);
         ResultSet rs = st.executeQuery();
         List<Module> md = new ArrayList<>();
@@ -22,6 +22,8 @@ public class ModuleDao {
             Module item = new Module();   
             item.setMcode(rs.getString("Mcode"));
             item.setMname(rs.getString("Mname"));
+            item.setDescription(rs.getString("M_Description"));
+            item.setNoOfCredits(rs.getInt("NoOfCredits"));
             
             md.add(item);
         }  
