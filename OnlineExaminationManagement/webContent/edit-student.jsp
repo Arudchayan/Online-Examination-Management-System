@@ -59,7 +59,7 @@ String email=s1.getEmail();
 <div class="container-fluid" align="center">
 <div class="card" style="width:80%">
 <h2 align="center" class="card-header">Edit Profile</h2>
-<form method="post" action="EditStudent">
+<form method="post" action="EditStudentController">
 <div class="card-body">
 <table class="table card-body table-borderless" style="width:80%;  margin-left: auto; margin-right: auto; background:white;">
     <tr>

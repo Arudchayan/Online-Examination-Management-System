@@ -17,9 +17,9 @@ public class GetStudentController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession ses = request.getSession();
-		//int uid=(int) ses.getAttribute("userNameLogin");
+		String uid=(String) ses.getAttribute("userNameLogin");
         StudentDao dao=new StudentDao();
-        Student s1=dao.getStudent(request.getSession().getAttribute("userNameLogin"));      
+        Student s1=dao.getStudent(uid);      
         ses.setAttribute("student", s1);
         response.sendRedirect("student-index.jsp");
 	}

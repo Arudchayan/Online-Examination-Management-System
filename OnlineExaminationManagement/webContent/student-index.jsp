@@ -135,6 +135,6 @@ String email=s1.getEmail();
 </div>
 
 
-<script type="text/javascript" src="${contextPath}/js/bootstrap.bundle.js" >
+<script type="text/javascript" src="${contextPath}/js/bootstrap.bundle.js" ></script>
 </body>
 </html>

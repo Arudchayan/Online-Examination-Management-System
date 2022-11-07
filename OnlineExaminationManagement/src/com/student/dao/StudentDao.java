@@ -41,9 +41,9 @@ public class StudentDao {
         Student s=new Student();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/examsystem","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");
             Statement st=con.createStatement();
-            ResultSet rs=st.executeQuery("select * from Student where user_id="+uid);
+            ResultSet rs=st.executeQuery("select * from Student where userId="+uid);
             if(rs.next()) {
                 s.setUser_id(rs.getInt("userId"));
                 s.setSID(rs.getString("SID"));

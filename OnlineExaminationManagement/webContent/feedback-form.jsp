@@ -55,9 +55,9 @@ ses.setAttribute("sid",sid);
 <div class="container-fluid" align="center">
 <div class="card" style="width:80%">
 <h2 align="center" class="card-header">Feedback</h2>
-<form method="post" action="stdFeedback">
+<form method="post" action="stdFeedbackController">
 <div class="card-body">
-<table class="table card-body table-borderless" style="width:50%;  margin-left: auto; margin-right: auto; background:white;">
+<table class="table card-body table-borderless" style="width:70%;  margin-left: auto; margin-right: auto; background:white;">
     <tr>
         <th>Student ID</th>
         <td><input type="text" name="sid" class="form-control" value="<%out.println(sid);%>" disabled></td>

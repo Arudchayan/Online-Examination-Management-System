@@ -23,7 +23,7 @@ public class EditStudentController extends HttpServlet {
         StudentDao dao=new StudentDao();
         dao.updateStudent(uid,sname,address,dob);
         
-        response.sendRedirect("GetStudent");
+        response.sendRedirect("GetStudentController");
 	}
 
 }

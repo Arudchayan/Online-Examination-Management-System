@@ -66,6 +66,7 @@ fd=dao.getFeedback(sid);
 for(Feedback item:fd){
 %>
 <table class="table card-body table-borderless" style="width:60%;  margin-left: auto; margin-right: auto; background:white; border-style:groove" >
+
 <tr class="table-info">
 <th>MessageID</th>
 <th>Date</th>
@@ -74,6 +75,7 @@ for(Feedback item:fd){
 <th>Message</th>
 <th></th>
 </tr>
+
 <tr>
 <td>
 <% 
@@ -86,7 +88,7 @@ out.println(item.getMessageID());
 <td><% out.println(item.getSubject()); %></td>
 <td><% out.println(item.getContent()); %></td>
 <td>
-<form action=deleteFB>
+<form action=deleteFBController>
 <input type="submit" value="Delete" class="btn btn-danger">
 </form></td>
 </tr>

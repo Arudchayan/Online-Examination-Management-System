@@ -33,7 +33,7 @@ public class FeedbackDao {
     public List<Feedback> getFeedback(String sid) {
             try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/examsystem","root","12345");               
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");               
             PreparedStatement st = con.prepareStatement("select * from Feedback where SID=?");
             st.setString(1,sid);
             ResultSet rs = st.executeQuery();
@@ -62,7 +62,7 @@ public class FeedbackDao {
         Feedback fd=new Feedback();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/examsystem","root","12345");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");
             PreparedStatement ps1=con.prepareStatement("delete from Feedback where MessageID=?");
             ps1.setInt(1,mid);
             ps1.executeUpdate();
