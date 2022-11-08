@@ -11,7 +11,8 @@
 <head>
 <title>Update Student</title>
 <link rel="stylesheet" href="${contextPath}/css/bootstrap.css">	
-<link rel="stylesheet" href="${contextPath}/styles.css">	
+<link rel="stylesheet" href="${contextPath}/styles.css">
+<link rel="stylesheet" href="css/admin.css">	
 </head>
 <body>
 <%
@@ -36,7 +37,7 @@ String email=s1.getEmail();
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav m-auto mb-2">
         <li class="nav-item">
             <a class="nav-link active" href="student-index.jsp">Home</a>
         </li>

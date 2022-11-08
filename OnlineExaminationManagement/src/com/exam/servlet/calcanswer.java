@@ -18,6 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.exam.model.DAO;
 import com.mysql.jdbc.PreparedStatement;
+import com.student.model.Student;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -74,7 +75,10 @@ public class calcanswer extends HttpServlet {
 		marks=(marks/answers.size())*100;
 		request.setAttribute("marks", marks);
 		DAO Obj = new DAO();
-		String userid=(String) request.getSession().getAttribute("userNameLogin");
+		//String userid=(String) request.getSession().getAttribute("userNameLogin");
+		Student s1=new Student();
+		s1=(Student)request.getSession().getAttribute("student");
+		String userid=s1.getSID();
 		String ExamID=(String) request.getSession().getAttribute("examId");
 		String FileLocation=userid+ExamID+".xls";
 		request.getSession().setAttribute("FileLocation",FileLocation);
@@ -96,7 +100,7 @@ public class calcanswer extends HttpServlet {
 		System.out.println(answer);
 		System.out.println(answers);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("marks.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("std-results.jsp");
 		rd.forward(request, response);
 		
 }}
