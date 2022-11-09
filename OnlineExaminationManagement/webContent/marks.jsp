@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title></title>
+<title>Exam Marks</title>
 </head>
 <body>
 <%=request.getAttribute("marks") %>

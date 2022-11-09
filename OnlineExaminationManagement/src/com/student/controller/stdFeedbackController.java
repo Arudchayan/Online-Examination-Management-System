@@ -20,6 +20,7 @@ public class stdFeedbackController extends HttpServlet {
         String subject=request.getParameter("subject");
         String message=request.getParameter("message");
         FeedbackDao dao=new FeedbackDao();
+        //run insertFeedback method in FeedbackDao
         dao.insertFeedback(sid,examID,subject,message);
         
         response.sendRedirect("std-feedback.jsp");

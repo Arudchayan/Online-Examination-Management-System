@@ -85,10 +85,11 @@ public class Login extends HttpServlet {
 				RequestDispatcher dispatcher1 = request.getRequestDispatcher("GetStudentController");
 				dispatcher1.forward(request, response);
 			}
-			/*
-			 * else if(userType.equals("Profecor")) { RequestDispatcher dispatcher1 =
-			 * request.getRequestDispatcher(""); dispatcher1.forward(request, response); }
-			 */
+
+			else if (userType.equals("Lecturer")) {
+				RequestDispatcher dispatcher1 = request.getRequestDispatcher("HomePage.jsp");
+				dispatcher1.forward(request, response);
+			}
 
 		} else {
 			request.setAttribute("errorMsg", "Invalid UserName or Password");

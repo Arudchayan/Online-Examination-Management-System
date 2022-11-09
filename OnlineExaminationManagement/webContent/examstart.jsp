@@ -6,7 +6,7 @@
 <!-- Bootstrap css -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Exam Page</title>
 </head>
 <body class="  ">
 <p class="text-center" >

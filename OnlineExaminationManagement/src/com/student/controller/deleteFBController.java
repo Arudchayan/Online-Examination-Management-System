@@ -18,6 +18,7 @@ public class deleteFBController extends HttpServlet {
 	    HttpSession ses = request.getSession();
 	    int mid=(int) ses.getAttribute("mid");
         FeedbackDao dao=new FeedbackDao();
+        //run deleteFeedback method in FeedbackDao an passing mid as parameter
         dao.deleteFeedback(mid);
         
         response.sendRedirect("std-feedback.jsp");

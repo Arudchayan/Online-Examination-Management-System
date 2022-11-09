@@ -17,6 +17,7 @@ public class ResultsDao {
         PreparedStatement st = con.prepareStatement("select a.AnswerID,a.ExamID,e.ExamName,e.ExamDate,e.ExamTime,e.Duration,a.Marks from answer a,exam e where a.ExamID=e.ExamID AND a.StudentID=?");
         st.setString(1,sid);
         ResultSet rs = st.executeQuery();
+        //To fetch multiple records 
         List<Results> result = new ArrayList<>();
         while(rs.next()) {
             Results item = new Results();   

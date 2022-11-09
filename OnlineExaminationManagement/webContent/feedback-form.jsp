@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Update Student</title>
+<title>Feedback Form</title>
 <link rel="stylesheet" href="${contextPath}/css/bootstrap.css">	
 <link rel="stylesheet" href="${contextPath}/styles.css">
 <link rel="stylesheet" href="css/admin.css">	

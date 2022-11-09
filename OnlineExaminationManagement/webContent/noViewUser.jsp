@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>No User</title>
+<title>No User View</title>
 <!-- Bootstrap css -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- Admin css -->

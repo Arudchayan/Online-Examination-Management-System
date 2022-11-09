@@ -18,11 +18,13 @@ public class ExamDao {
         try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineexaminationmanagement","root","password");                 
+        //To get today's date
         LocalDate date=java.time.LocalDate.now();
         PreparedStatement st = con.prepareStatement("select e.ExamID,e.Mcode,e.ExamName,e.ExamDate,e.ExamTime,e.Duration from exam e, batch b, student s where s.SID=b.SID AND b.BatchID=e.BatchID AND s.SID=? AND e.ExamDate=?");
         st.setString(1,sid);
         st.setString(2, date.toString());
         ResultSet rs = st.executeQuery();
+        //Using List to fetch multiple records
         List<Exam> ex = new ArrayList<>();
         while(rs.next()) {
             Exam item = new Exam();   

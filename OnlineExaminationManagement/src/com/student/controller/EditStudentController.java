@@ -21,6 +21,7 @@ public class EditStudentController extends HttpServlet {
         String address=request.getParameter("address");
         String dob=request.getParameter("dob");
         StudentDao dao=new StudentDao();
+        //run updateStudent method in studentDao
         dao.updateStudent(uid,sname,address,dob);
         
         response.sendRedirect("GetStudentController");
