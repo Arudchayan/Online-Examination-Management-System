@@ -67,7 +67,7 @@ public class getquestions extends HttpServlet{
 		try {
 			rs.next();
 			String filename=rs.getString("ExamFile");
-			String FileLocation="C:\\Users\\PC\\eclipse-workspace\\New folder\\OnlineExaminationManagement\\webContent\\examfiles\\"+filename;
+			String FileLocation="C:\\Users\\PC\\eclipse-workspace\\workspace3\\Online-Examination-Management-System\\OnlineExaminationManagement\\webContent\\examfiles\\"+filename;
 		
 		//GETTING QUESTIONS AND ANSWERS FROM EXCEL SHEET
 		FileInputStream file = new FileInputStream(new File(FileLocation));

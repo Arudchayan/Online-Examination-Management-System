@@ -9,7 +9,12 @@
   <link rel="stylesheet" href="css/admin.css">
   </head>
   <body>
-    
+    <%
+		String userName = (String) session.getAttribute("userNameLogin");
+		String fName = (String) session.getAttribute("firstNameLogin");
+		if(session.getAttribute("userNameLogin") == null)
+			response.sendRedirect("index.jsp");
+	%>
     <nav class="navbar navbar-expand-lg bg-light">
 <a class="navbar-brand" href="#"><img src="Images/Logo.png" alt="Logo" width="160"></a>
       <div class="container-fluid">
@@ -25,13 +30,13 @@
               <a class="nav-link" href="ExamList.jsp">Exam List</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="AddSubject.jsp">Add Subject</a>
+              <a class="nav-link" href="AddSubject.jsp">Add Module</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="EditSubject.jsp">Edit Module</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="DeleteModule.jsp">Delete Subject</a>
+              <a class="nav-link" href="DeleteModule.jsp">Delete Module</a>
             </li>           
           </ul>
           <form action="Logout" method="post">
@@ -40,7 +45,6 @@
         </div>
       </div>
     </nav>
-
    <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -51,13 +55,13 @@
             <div class="col-lg-6">
               <div class="input-container">
                 <div class="inputInner-container">
-                  <p class="input-title">Edit Subject</p>
+                  <p class="input-title">Edit Module</p>
                   <form action="EditSubjectServlet" method="post" name="userValidation" onSubmit="return userNameValidation(this)">
                     <div class="user-input">
                       <label class="input-label">Module Code</label>
                       <input type="text" name="Mcode" class="form-control" maxlength="6">
                     </div>
-                    <input type="submit" class="input-btn btn btn-primary" value="Edit Subject">
+                    <input type="submit" class="input-btn btn btn-primary" value="Edit Module">
                   </form>
                   <span id="errormes" class="text-danger"></span>
                 </div>

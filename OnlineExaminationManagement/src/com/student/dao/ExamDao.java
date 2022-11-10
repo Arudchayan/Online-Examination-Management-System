@@ -13,7 +13,7 @@ import java.util.List;
 
 import com.student.model.Exam;
 
-public class ExamDao {
+public class ExamDao implements ExamDaoInterface {
     public List<Exam> getExam(String sid) {
         try {
         Class.forName("com.mysql.jdbc.Driver");

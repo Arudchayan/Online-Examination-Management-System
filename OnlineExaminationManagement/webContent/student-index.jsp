@@ -4,6 +4,12 @@
 <%@page import="jakarta.servlet.http.*" %>
 <%@page import="jakarta.servlet.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+		String userName = (String) session.getAttribute("userNameLogin");
+		String fName = (String) session.getAttribute("firstNameLogin");
+		if(session.getAttribute("userNameLogin") == null)
+			response.sendRedirect("index.jsp");
+	%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>

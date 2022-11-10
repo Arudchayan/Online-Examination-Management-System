@@ -13,6 +13,12 @@
  <title>Add Exam</title>
 </head>
 <body>
+<%
+		String userName = (String) session.getAttribute("userNameLogin");
+		String fName = (String) session.getAttribute("firstNameLogin");
+		if(session.getAttribute("userNameLogin") == null)
+			response.sendRedirect("index.jsp");
+	%>
 <nav class="navbar navbar-expand-lg bg-light">
 <a class="navbar-brand" href="#"><img src="Images/Logo.png" alt="Logo" width="160"></a>
       <div class="container-fluid">
@@ -28,13 +34,13 @@
               <a class="nav-link" href="ExamList.jsp">Exam List</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="AddSubject.jsp">Add Subject</a>
+              <a class="nav-link" href="AddSubject.jsp">Add Module</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="EditSubject.jsp">Edit Module</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="DeleteModule.jsp">Delete Subject</a>
+              <a class="nav-link" href="DeleteModule.jsp">Delete Module</a>
             </li>           
           </ul>
           <form action="Logout" method="post">
@@ -72,7 +78,7 @@
       </div>
       <div class="mb-3">
         <label for="exampleInputTime"class="form-label">Duration</label>
-        <input type="time" class="form-control" id="exampleTime"name="Duration" required>
+        <input type="text" class="form-control" id="exampleTime"name="Duration" required>
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Upload File</label>

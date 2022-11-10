@@ -29,7 +29,7 @@ public class Add extends HttpServlet {
         String BatchID=request.getParameter("BatchID");
         String ExamDate=request.getParameter("ExamDate");
         String ExamTime=request.getParameter("ExamTime");
-        String Duration=request.getParameter("Duration");
+        int Duration=Integer.parseInt(request.getParameter("Duration"));
         Part part =request.getPart("ExamFile");
         String ExamFile=part.getSubmittedFileName();
         String path = getServletContext().getRealPath("/"+"ExamFile"+File.separator+ExamFile);

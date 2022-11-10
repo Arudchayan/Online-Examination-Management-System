@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import com.student.model.Student;
 
-public class StudentDao {
+public class StudentDao implements StudentDaoInterface {
     
     public Student getStudent(Object object) {
         Student s=new Student();

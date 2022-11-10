@@ -309,4 +309,14 @@
     <servlet-name>Update</servlet-name>
     <url-pattern>/Update</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Add</display-name>
+    <servlet-name>Add</servlet-name>
+    <servlet-class>com.lecturer.servlet.Add</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Add</servlet-name>
+    <url-pattern>/Add</url-pattern>
+  </servlet-mapping>
 </web-app>

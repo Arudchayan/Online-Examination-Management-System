@@ -9,7 +9,7 @@ import java.util.List;
 
 import com.student.model.Feedback;
 
-public class FeedbackDao {
+public class FeedbackDao implements FeedbackDaoInterface {
     
     public Feedback insertFeedback(String sid,String examID,String subject,String content) {
         Feedback fd=new Feedback();

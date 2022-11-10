@@ -9,7 +9,7 @@ import java.util.List;
 
 import com.student.model.Results;
 
-public class ResultsDao {
+public class ResultsDao implements ResultsDaoInterface {
     public List<Results> getResults(String sid) {
         try {
         Class.forName("com.mysql.jdbc.Driver");

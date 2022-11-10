@@ -6,6 +6,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%
+		String userName = (String) session.getAttribute("userNameLogin");
+		String fName = (String) session.getAttribute("firstNameLogin");
+		if(session.getAttribute("userNameLogin") == null)
+			response.sendRedirect("index.jsp");
+	%>
 <title>Exam List</title>
 <meta charset="ISO-8859-1">
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">

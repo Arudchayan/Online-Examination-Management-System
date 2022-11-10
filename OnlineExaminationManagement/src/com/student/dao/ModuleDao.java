@@ -9,7 +9,7 @@ import java.util.List;
 
 import com.student.model.Module;
 
-public class ModuleDao {
+public class ModuleDao implements ModuleDaoInterface{
     public List<Module> getModule(String sid) {
         try {
         Class.forName("com.mysql.jdbc.Driver");

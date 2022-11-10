@@ -14,9 +14,9 @@ import java.sql.Statement;
 
 import com.lecturer.model.Exam;
 
-public class ExamDao {
+public class ExamDao implements ExamDaoInterface{
 
-	public Exam AddExam(String ExamID,String Mcode,String ExamName,String BatchID,String  ExamDate,String  ExamTime,String  Duration,String ExamFile) {
+	public Exam AddExam(String ExamID,String Mcode,String ExamName,String BatchID,String  ExamDate,String  ExamTime,int  Duration,String ExamFile) {
 		Exam exam = new Exam();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -28,7 +28,7 @@ public class ExamDao {
             ps1.setString(4,BatchID);
             ps1.setString(5,ExamDate);
             ps1.setString(6,ExamTime);
-            ps1.setString(7,Duration);
+            ps1.setInt(7,Duration);
             ps1.setString(8,ExamFile);
             ps1.executeUpdate();
             

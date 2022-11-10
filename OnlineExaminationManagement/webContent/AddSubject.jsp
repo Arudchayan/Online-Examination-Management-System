@@ -9,8 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
   <body>
-    
-  <nav class="navbar navbar-expand-lg bg-light">
+    <%
+		String userName = (String) session.getAttribute("userNameLogin");
+		String fName = (String) session.getAttribute("firstNameLogin");
+		if(session.getAttribute("userNameLogin") == null)
+			response.sendRedirect("index.jsp");
+	%>
+ <nav class="navbar navbar-expand-lg bg-light">
 <a class="navbar-brand" href="#"><img src="Images/Logo.png" alt="Logo" width="160"></a>
       <div class="container-fluid">
         <div class="collapse navbar-collapse">
@@ -25,13 +30,13 @@
               <a class="nav-link" href="ExamList.jsp">Exam List</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="AddSubject.jsp">Add Subject</a>
+              <a class="nav-link" href="AddSubject.jsp">Add Module</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="EditSubject.jsp">Edit Module</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="DeleteModule.jsp">Delete Subject</a>
+              <a class="nav-link" href="DeleteModule.jsp">Delete Module</a>
             </li>           
           </ul>
           <form action="Logout" method="post">
@@ -48,7 +53,7 @@
         <div class="row">
             <div class="CRUD-body">
             
-            <h1 align="center">Add Subject</h1>
+            <h1 align="center">Add Module</h1>
             
                 <table cellpadding="15">
                     <tr>

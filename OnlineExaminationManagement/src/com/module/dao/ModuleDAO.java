@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 import com.mysql.cj.xdevapi.Statement;
 
-public class ModuleDAO {
+public class ModuleDAO implements ModuleDAOInterface{
 	public void setModule(String Mcode,String Mname,String Mdes,String Mpoints) {
 		try {
 			int mpoint=Integer.parseInt(Mpoints);
