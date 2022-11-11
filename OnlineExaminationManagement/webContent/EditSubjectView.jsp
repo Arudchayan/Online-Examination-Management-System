@@ -49,18 +49,18 @@
  <form action="UpdateModule" method="post">
       <div class="container1">
         <div class="row">
-            <div class="addExam">
+            <div class="CRUD-body">
                 <table cellspacing="10" cellpadding="3">
                     <tr>
                         <td>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Module code</label>
+                                <label for="exampleFormControlInput1" class="input-label">Module code</label>
                                 <input type="text" class="form-control" id="exampleFormControlInput1" name="Mcode" value=<%=request.getAttribute("Mcode") %>>
                             </div>
                         </td>
                         <td>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Module Name</label>
+                                <label for="exampleFormControlInput1" class="input-label">Module Name</label>
                                 <input type="text" class="form-control" id="exampleFormControlInput1" name="Mname" value=<%=request.getAttribute("Mname") %>>
                             </div>
                         </td>
@@ -68,13 +68,13 @@
                     <tr>
                         <td>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Module Description</label>
+                                <label for="exampleFormControlInput1" class="input-label">Module Description</label>
                                 <input type="text" class="form-control" id="exampleFormControlInput1" name="Mdes" value=<%=request.getAttribute("Mdes") %>>
                             </div>
                         </td>
                         <td>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">No of Credits</label>
+                                <label for="exampleFormControlInput1" class="input-label">No of Credits</label>
                                 <input type="Numeric" class="form-control" id="exampleFormControlInput1" name="Mpoints" value=<%=request.getAttribute("Mpoints") %>>
                             </div>
                         </td>

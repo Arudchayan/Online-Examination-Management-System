@@ -85,7 +85,9 @@
         <input class="form-control" type="file" id="formFile" name="ExamFile" required>
       </div>
        
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class ="text-center">
+    <buttton class ="btn btn-primary btn-lg mb-4 mt-4" type="Submit">Submit</buttton>
+    </div>
   </form>
 </div> 
 

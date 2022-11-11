@@ -32,7 +32,7 @@ public class Add extends HttpServlet {
         int Duration=Integer.parseInt(request.getParameter("Duration"));
         Part part =request.getPart("ExamFile");
         String ExamFile=part.getSubmittedFileName();
-        String path = getServletContext().getRealPath("/"+"ExamFile"+File.separator+ExamFile);
+        String path = getServletContext().getRealPath("/"+"examfiles"+File.separator+ExamFile);
         InputStream is = part.getInputStream();
         boolean succs = UploadFile(is,path);
         if(succs) {
